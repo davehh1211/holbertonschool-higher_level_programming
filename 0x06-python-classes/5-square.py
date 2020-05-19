@@ -42,7 +42,7 @@ class Square:
     def my_print(self):
         "printing hashtags as a square"
         if self.size == 0:
-            return None
+            print()
         else:
             for i in range(0, self.size):
                 print("#" * self.size)
