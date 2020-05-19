@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"2-square.py - defines a square with a private attribute and exceptions"
+
+
 class Square:
     """
     Class that defines a squared
@@ -8,6 +11,7 @@ class Square:
         Size (int): Private, Size of the square
     """
     def __init__(self, size=0):
+        "Initialization of instance with size"
         if type(size) is not int:
             raise TypeError("size must be an integer")
         elif size < 0:
