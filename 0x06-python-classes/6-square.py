@@ -10,19 +10,10 @@ class Square:
     Args:
         Size (int): Private, Size of the square
     """
-    def __init__(self, size=0, position=(0, 0)):
-        if type(size) is not int:
-            raise TypeError("size must be an integer")
-        elif size < 0:
-            raise ValueError("size must be >= 0")
-        else:
-            self.__size = size
-            self.__position = position
 
-    def area(self):
-        "definition of area of the square"
-        area = self.__size * self.__size
-        return area
+    def __init__(self, size=0, position=(0, 0)):
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -42,26 +33,29 @@ class Square:
     @property
     def position(self):
         "protecting the var"
-        return self.position
+        return self.__position
 
     @position.setter
     def position(self, value):
         "proteting the data from wrong values"
-        if value[0] < 0 or value[1] < 0:
+        if (type(value) is not tuple or value[0] < 0 or value[1] < 0 or
+                type(value[0]) is not int or type(value[1]) is not int):
             raise TypeError("position must be a tuple of 2 positive integers")
-        elif len(value) < 2:
+        elif len(value) is not 2:
             raise TypeError("position must be a tuple of 2 positive integers")
-        if type(value) is not int:
-            raise TypeError("size must be an integer")
-        elif value < 0:
-            raise ValueError("size must be >= 0")
         else:
             self.__position = value
 
+    def area(self):
+        "definition of area of the square"
+        area = self.__size * self.__size
+        return area
+
     def my_print(self):
         "printing hashtags as a square"
-        if self.__size is 0:
+        if self.__size == 0:
             print()
+            return
         for i in range(0, self.__position[1]):
             print()
         for i in range(0, self.__size):
