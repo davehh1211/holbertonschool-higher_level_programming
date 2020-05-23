@@ -95,7 +95,7 @@ test #17: two casted strings
     ValueError: invalid literal for int() with base 10: 'hi'
 
 test #18: infinite number
-	>>> add_integer(float('inf'), 0)
+    >>> add_integer(float('inf'), 0)
     Traceback (most recent call last):
     OverflowError: cannot convert float infinity to integer
 
