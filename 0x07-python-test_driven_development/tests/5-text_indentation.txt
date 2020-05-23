@@ -1,0 +1,58 @@
+The text indentation module
+======================
+
+Text Indentation
+-------------------
+
+Import module:
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Function:
+Parse a string.
+
+Arguments:
+‘phrase’ is the text we want to parse when characters are present
+
+test #0: if argument is a string.
+    >>> text_indentation("coloco: la pipa, la pinta y la santa Maria. cierto? buscala")
+    coloco:
+    <BLANKLINE>
+    la pipa, la pinta y la santa Maria.
+    <BLANKLINE>
+    cierto?
+    <BLANKLINE>
+    buscala
+
+test #1: if the argument is not a string
+    >>> text_indentation(45)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+test #2: if the argument is void
+    text_indentation()
+    Traceback (most recent call last):
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+test #3: if the string has marks together
+    >>> text_indentation("coloco: la pipa, la pinta y la santa Maria... cierto??? buscala")
+    coloco:
+    <BLANKLINE>
+    la pipa, la pinta y la santa Maria.
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    cierto?
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    buscala
+
+test #4: if the argument is void
+    text_indentation(True)
+    Traceback (most recent call last):
+    TypeError: text must be a string

@@ -1,0 +1,67 @@
+The say my name module
+======================
+
+Say My name
+-------------------
+
+Import module:
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Function:
+Say the name of the user.
+
+Arguments:
+‘first_name’ and ‘last_name’ are the names of the user in the correspond order.
+
+test #0: if first argument is not a string.
+    >>> say_my_name(2254, "Gomez")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+test #1: if second argument is not a string.
+    >>> say_my_name("AXtr", 8845)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+test #2: if first argument is None. TO BE CHECKED
+    >>> say_my_name(None, "Bolson")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+test #3: if second argument is not a string.
+    >>> say_my_name("John", 35.6)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+test #4: if first argument is not a string.
+    >>> say_my_name(36.8, "Pupple")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+test #5: if first argument is not a string.
+    >>> say_my_name("Dobbie")
+    My name is Dobbie 
+
+test #6: if both arguments are not strings.
+    >>> say_my_name(45, 85.6)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+test #7: if both arguments are strings.
+    >>> say_my_name("Jhonathan", "Smith")
+    My name is Jhonathan Smith
+
+test #8: if one argument is boolean
+    >>> say_my_name(True, "Chapman")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+test #9: if one argument is boolean
+    >>> say_my_name("Guantanamo", False)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+test #9: if one argument is boolean
+    >>> say_my_name("Axt56b", "Porcino")
+    My name is Axt56b Porcino

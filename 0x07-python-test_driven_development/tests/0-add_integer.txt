@@ -1,0 +1,95 @@
+The 0-add_integer module
+======================
+
+Addition of integers
+-------------------
+
+Import module:
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+Function:
+Write a function that adds two integers.
+
+Operators:
+‘a’ and ‘b’ must be integers or float:
+
+test #0: add two integer 
+    >>> add_integer(1, 2)
+    3
+
+test #1: add value a is positive and b is negative
+    >>> add_integer(100, -2)
+    98
+
+test #2: add value a is positive and b is None
+    >>> add_integer(-2, )
+    96
+
+test #3: add value a is float and b is negative
+    >>> add_integer(100.3, -2)
+    98
+
+test #4: add value a is a negative and b is a positive
+    >>> add_integer(-50, 10)
+    -40
+
+test #5: add both negative values.
+    >>> add_integer(-3, -8)
+    -11
+
+test #6: add a positive and b zero.
+    >>> add_integer(15, 0)
+    15
+
+test #7: add two zeros.
+    >>> add_integer(0, 0)
+    0
+
+test #8: add a positive integer and a negative float.
+    >>> add_integer(15, -15.5)
+    0
+
+test #9 add value a is None and b is positive
+    >>> add_integer(None, 100)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+Test #10: function without parameters
+    >>> add_integer()
+    Traceback (most recent call last):
+    TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Test #11: add value a is not defined and b is positive
+    >>> add_integer(a, 123)
+    Traceback (most recent call last):
+    NameError: name 'a' is not defined
+
+Test #12: add value a is integer and b is not defined
+    >>> add_integer(123, b)
+    Traceback (most recent call last):
+    NameError: name 'b' is not defined
+
+test #13: add two floats.
+    >>> add_integer(14.5, 10.5)
+    24
+
+test #14: add one integer and a boolean 
+    >>> add_integer(100, True)
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+test #15: add one boolean and an integer 
+    >>> add_integer(False, 2)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+test #16: one boolean and an integer
+    >>> add_integer(False)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+test #17: two casted strings
+    >>> add_integer(int("hi"), int("fool"))
+    Traceback (most recent call last):
+    ValueError: invalid literal for int() with base 10: 'hi'
