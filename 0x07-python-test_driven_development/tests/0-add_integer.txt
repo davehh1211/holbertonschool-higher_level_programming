@@ -93,3 +93,13 @@ test #17: two casted strings
     >>> add_integer(int("hi"), int("fool"))
     Traceback (most recent call last):
     ValueError: invalid literal for int() with base 10: 'hi'
+
+test #18: infinite number
+	>>> add_integer(float('inf'), 0)
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
+
+test #19: infinite number
+    >>> add_integer(float('NaN'), 0)
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer
