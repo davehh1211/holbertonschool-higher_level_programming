@@ -53,6 +53,18 @@ test #3: if the string has marks together
     buscala
 
 test #4: if the argument is void
-    text_indentation(True)
+    >>> text_indentation(True)
     Traceback (most recent call last):
     TypeError: text must be a string
+
+test #5: if there is nothing
+    >>> text_indentation("")
+    
+
+test #4: if the argument is void
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+
+
