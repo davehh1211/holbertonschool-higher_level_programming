@@ -62,6 +62,11 @@ test #9: if one argument is boolean
     Traceback (most recent call last):
     TypeError: last_name must be a string
 
-test #9: if one argument is boolean
+test #10: if one argument is boolean
     >>> say_my_name("Axt56b", "Porcino")
     My name is Axt56b Porcino
+
+test #11: if one argument is boolean
+    >>> say_my_name("", "")
+    Traceback (most recent call last):
+    TypeError: missing argument
