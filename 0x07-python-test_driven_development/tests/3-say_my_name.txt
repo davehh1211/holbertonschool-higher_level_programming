@@ -66,7 +66,7 @@ test #10: if one argument is boolean
     >>> say_my_name("Axt56b", "Porcino")
     My name is Axt56b Porcino
 
-test #11: if one argument is boolean
-    >>> say_my_name("", "")
+test #11: if one argument is empty
+    >>> say_my_name()
     Traceback (most recent call last):
-    TypeError: missing argument
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
