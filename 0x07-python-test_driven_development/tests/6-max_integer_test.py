@@ -59,6 +59,14 @@ class TestMaxInteger(unittest.TestCase):
         result = max_integer(["cucu", "hp", "x"])
         self.assertEqual(result, "x")
 
+    def test_max_none(self):
+        esult2 = max_integer([])
+        self.assertEqual(result2, None)
+
+    def test_max_none(self):
+        result2 = max_integer()
+        self.assertEqual(result2, None)
+
     def test_boolean(self):
         self.assertTrue(max_integer([True, False]), True)
 
