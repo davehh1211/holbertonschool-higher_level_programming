@@ -14,7 +14,7 @@ def text_indentation(text):
 
     Special Characters: characters that parses the string {.} {:} {?}
     """
-    if type(text) is not str:
+    if type(text) is not str or not text:
         raise TypeError("text must be a string")
     runner = ":"
     for i in text:
