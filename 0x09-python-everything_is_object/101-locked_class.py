@@ -6,8 +6,8 @@
 
 
 class LockedClass:
-	"""Create only first name"
-	"""
+    """Create only first name"
+    """
     __slots__ = ['first_name']
 
     def __init__(self, first_name=""):
