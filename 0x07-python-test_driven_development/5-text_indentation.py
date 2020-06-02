@@ -16,10 +16,11 @@ def text_indentation(text):
     """
     if type(text) is not str:
         raise TypeError("text must be a string")
-    marks = [".", ":", "?"]
-    for sig in marks:
-        text = str(sig + '\n\n').join(char.strip() for char in text.split(sig))
-    print(text, end='')
-
-    if len(text) > 0 and text[-1] in marks:
-        print('\n')
+    runner = ":"
+    for i in text:
+        if i is " " and runner in ".?:":
+            continue
+        print(i, end="")
+        if i in ".:?":
+            print("\n")
+        runner = i
