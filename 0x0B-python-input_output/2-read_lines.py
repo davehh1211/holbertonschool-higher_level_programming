@@ -14,10 +14,8 @@ def read_lines(filename="", nb_lines=0):
     """
     count = 0
     with open(filename, encoding='UTF8') as myfile:
-        for line in myfile:
-            count += 1
-            if nb_lines <= 0 or nb_lines >= count:
-                print(line, end='')
-            else:
-                for line in (myfile.readlines()[:nb_lines]):
-                    print(line, end='')
+        if nb_lines > 0:
+            for i in range(nb_lines):
+                print(myfile.readline(), end='')
+        else:
+            print(myfile.read(), end='')
