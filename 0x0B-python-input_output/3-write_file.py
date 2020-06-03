@@ -6,15 +6,15 @@ writes a string to a text file
 
 
 def write_file(filename="", text=""):
-	"""Write a function that
+    """Write a function that
     writes a string to a text file
 
-	Keyword Arguments:
-		filename {str} -- [description] (default: {""})
-		text {str} -- [description] (default: {""})
+    Keyword Arguments:
+        filename {str} -- [description] (default: {""})
+        text {str} -- [description] (default: {""})
 
-	Returns:
-		[int] -- the number of characters written
-	"""
+    Returns:
+        [int] -- the number of characters written
+    """
     with open(filename, mode='w', encoding='UTF8') as myfile:
         return myfile.write(text)
