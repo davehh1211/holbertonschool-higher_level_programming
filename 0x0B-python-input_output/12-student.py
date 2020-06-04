@@ -23,7 +23,7 @@ class Student:
         """ retrieves a dictionary representation of a Student instance
 
         Args:
-                        attrs ([list], optional): [list of attributes of the class]. Defaults to None.
+            attrs ([list], optional): [list of attributes of the class].
 
                 Returns:
                         [dict]: [the whole dict]
