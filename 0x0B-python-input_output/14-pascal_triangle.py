@@ -13,7 +13,6 @@ def pascal_triangle(n):
         return
 
     triang = []
-    space = []
     for i in range(n):
         space = []
         for sq in range(i + 1):
