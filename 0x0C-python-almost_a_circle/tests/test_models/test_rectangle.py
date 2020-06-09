@@ -3,6 +3,7 @@
 """
 
 import unittest
+import pep8
 from io import StringIO
 import sys
 from models.base import Base
@@ -14,6 +15,12 @@ class TestRectangle(unittest.TestCase):
 
     def setUp(self):
         Base._Base__nb_objects = 0
+
+    def test_base_pep8_conformance(self):
+        """Test that we conform to PEP8."""
+        pep8style = pep8.StyleGuide(quiet=True)
+        result = pep8style.check_files(['./models/rectangle.py'])
+        self.assertEqual(result.total_errors, 0)
 
     def test_isintwidth(self):
         list1 = Rectangle(10, 5)
