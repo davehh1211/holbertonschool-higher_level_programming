@@ -80,3 +80,11 @@ class TestRectangle(unittest.TestCase):
         self.assertRaises(TypeError, Rectangle)
         self.assertRaises(TypeError, Rectangle, True, False, False)
         self.assertRaises(TypeError, Rectangle, False)
+
+    def test_to_dict(self):
+        r1 = Rectangle(10, 2, 5, 9)
+        r1.to_dictionary()
+        self.assertEqual(r1.__str__(), "[Rectangle] (1) 5/9 - 10/2")
+        r1 = Rectangle(11, 6, 8, 4, 89)
+        r1.to_dictionary()
+        self.assertEqual(r1.__str__(), "[Rectangle] (89) 8/4 - 11/6")
