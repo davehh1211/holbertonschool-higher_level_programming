@@ -38,7 +38,7 @@ class Base:
                         [type]: [description]
                 """
         if list_dictionaries is None or not list_dictionaries:
-            return []
+            return "[]"
         return json.dumps(list_dictionaries)
 
     @classmethod
@@ -67,7 +67,7 @@ class Base:
             [type]: [description]
         """
         if json_string is None or not json_string:
-            return "[]"
+            return []
         return json.loads(json_string)
 
     @classmethod
