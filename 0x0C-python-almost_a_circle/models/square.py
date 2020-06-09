@@ -38,17 +38,13 @@ class Square(Rectangle):
         method def update(self, *args, **kwargs)
         that assigns attributes:
         """
-        if args is not None:
-            try:
-                self.id = args[0]
-                self.__size = args[1]
-                self.__x = args[2]
-                self.__y = args[3]
-            except (IndexError):
-                pass
+        lista = ['id', 'size', 'x', 'y']
         if args is None or not args:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+        else:
+            for n in range(len(args)):
+                setattr(self, lista[n], args[n])
 
     def to_dictionary(self):
         """Update the class Square by adding
