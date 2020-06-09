@@ -66,6 +66,8 @@ class Base:
         Returns:
             [type]: [description]
         """
+        if json_string is None or not json_string:
+            return "[]"
         return json.loads(json_string)
 
     @classmethod
