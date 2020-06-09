@@ -1,10 +1,13 @@
 #!/usr/bin/python3
+"""test to evaluate base
+"""
 
 import unittest
 from models.base import Base
 
 
 class TestBase(unittest.TestCase):
+    """checks the class"""
 
     def test_baseid(self):
         base1 = Base()

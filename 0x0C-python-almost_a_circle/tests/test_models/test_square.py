@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""test to check the method"""
 
 import unittest
 from io import StringIO
@@ -9,6 +10,7 @@ from models.square import Square
 
 
 class TestSquare(unittest.TestCase):
+    """test class"""
 
     def setUp(self):
         Base._Base__nb_objects = 0

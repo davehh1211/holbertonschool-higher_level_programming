@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""test to check rectangle class
+"""
 
 import unittest
 from io import StringIO
@@ -8,6 +10,7 @@ from models.rectangle import Rectangle
 
 
 class TestRectangle(unittest.TestCase):
+    """test class"""
 
     def setUp(self):
         Base._Base__nb_objects = 0
