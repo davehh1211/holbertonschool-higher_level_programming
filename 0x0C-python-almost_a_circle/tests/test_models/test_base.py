@@ -73,7 +73,7 @@ class TestBase(unittest.TestCase):
                                                           "height": 8, "id": 4}])
             os.remove("Rectangle.json")
 
-    def test_from_json_string(sef):
+    # def test_from_json_string(sef):
 
         # def test_create(self):
 
