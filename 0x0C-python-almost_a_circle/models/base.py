@@ -5,6 +5,7 @@ classes and to avoid duplicating
 the same code (by extension, same bugs)
 """
 import json
+import os.path
 import csv
 
 
@@ -48,16 +49,13 @@ class Base:
                         list_objs ([type]): [description]
                 """
         filename = "{}.json".format(cls.__name__)
+        list_own = []
         with open(filename, mode='w', encoding='UTF8') as myfile:
             if list_objs is None:
-                json.dumps("[]", myfile)
-            else:
-                list_own = []
-                for obj_lists in list_objs:
-                    tmp_dictio = cls.to_dictionary(obj_lists)
-                    list_own.append(tmp_dictio)
-            json_list_dict = cls.to_json_string(list_own)
-            myfile.write(json_list_dict)
+                myfile.write(cls.to_json_string(list_own))
+            for obj_lists in list_objs:
+                list_own.append(cls.to_dictionary(obj_lists))
+                myfile.write(cls.to_json_string(list_own))
 
     @staticmethod
     def from_json_string(json_string):
@@ -92,15 +90,15 @@ class Base:
                 Returns:
                         [type]: [description]
                 """
+        l_js = []
         filename = "{}.json".format(cls.__name__)
-        if not filename:
-            return "[]"
-        else:
+        if os.path.isfile(filename):
             with open(filename, mode='r', encoding='UTF8') as myfile:
                 list_inst = myfile.read()
                 str_js = cls.from_json_string(list_inst)
-                l_js = []
                 for instan_el in str_js:
                     aux = cls.create(**instan_el)
                     l_js.append(aux)
                 return l_js
+        else:
+            return l_js
