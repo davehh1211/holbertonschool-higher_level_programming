@@ -14,7 +14,8 @@ if __name__ == "__main__":
     # HERE: no SQL query, only objects!
     session = Session()
 
-    state1 = session.query(State).filter(State.name.like('a%'))
+    state1 = session.query(State).order_by(
+        State.id).filter(State.name.like('%a%'))
     for cities in state1:
         print("{}: {}".format(cities.id, cities.name))
 
