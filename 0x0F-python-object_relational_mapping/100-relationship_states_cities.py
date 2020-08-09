@@ -1,26 +1,26 @@
 #!/usr/bin/python3
-"""[summary]
-"""
+"""script that prints the first State object from the database
+hbtn_0e_6_usa"""
 from sqlalchemy import (create_engine)
 from relationship_state import Base, State
 from relationship_city import City
 from sqlalchemy.orm import sessionmaker
 import sys
 
+
 if __name__ == "__main__":
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
+    """Connecting"""
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
         sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
-    # HERE: no SQL query, only objects!
     session = Session()
-
-    new_state = State()
-    new_state.name = 'California'
-    new_city = City()
-    new_city.name = 'San Frascisco'
-    new_state.cities.append(new_city)
-    session.add(new_state)
-    session.add(new_city)
+    estado = State()
+    estado.name = 'California'
+    ciudad = City()
+    ciudad.name = 'San Francisco'
+    estado.cities.append(ciudad)
+    session.add(estado)
+    session.add(ciudad)
     session.commit()
     session.close()
