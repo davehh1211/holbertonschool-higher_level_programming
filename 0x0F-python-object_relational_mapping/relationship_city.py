@@ -14,7 +14,7 @@ class City(Base):
     """
     __tablename__ = 'cities'
 
-    id = Column(Integer, autoincrement=True, primary_key=True, nullable=False)
+    id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
 
     name = Column(String(128), nullable=False)
 

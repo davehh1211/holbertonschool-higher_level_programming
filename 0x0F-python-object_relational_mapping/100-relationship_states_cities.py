@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """[summary]
 """
-from sqlalchemy import create_engine
+from sqlalchemy import (create_engine)
 from relationship_state import Base, State
 from relationship_city import City
 from sqlalchemy.orm import sessionmaker
