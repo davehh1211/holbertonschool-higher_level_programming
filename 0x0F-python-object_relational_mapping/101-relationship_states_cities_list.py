@@ -16,8 +16,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    file1 = session.query(State).join(
-        City).order_by(State.id, City.id).all()
+    file1 = session.query(State).order_by(State.id).all()
     for i in file1:
         print("{}: {}".format(i.id, i.name))
         for j in i.cities:
