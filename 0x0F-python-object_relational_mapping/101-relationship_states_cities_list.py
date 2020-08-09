@@ -17,16 +17,10 @@ if __name__ == "__main__":
     session = Session()
 
     file1 = session.query(State).join(
-        City).order_by(State.id, City.id).order_by(State.id, City.id).all()
+        City).order_by(State.id, City.id).all()
     for i in file1:
         print("{}: {}".format(i.id, i.name))
         for j in i.cities:
             print("\t{}: {}".format(j.id, j.name))
 
     session.close()
-
-
-# result = session.query(Customer).join(Invoice).filter(Invoice.amount == 8500)
-# for row in result:
-#    for inv in row.invoices:
-#       print (row.id, row.name, inv.invno, inv.amount)
