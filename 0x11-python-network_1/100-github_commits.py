@@ -10,6 +10,8 @@ if __name__ == "__main__":
     fullurl = 'https://api.github.com/repos/' + \
         sys.argv[1] + "/" + sys.argv[2] + "/commits"
     r = requests.get(fullurl)
-    sha = r.json()[i].get('sha')
-    user_com = r.json()[i].get('commit').get('author').get('name')
-    print("{}: {}".format(sha, user_com))
+
+    for i in range(10):
+        sha = r.json()[i].get('sha')
+        user_com = r.json()[i].get('commit').get('author').get('name')
+        print("{}: {}".format(sha, user_com))
