@@ -11,7 +11,8 @@ if __name__ == "__main__":
         sys.argv[1] + "/" + sys.argv[2] + "/commits"
     r = requests.get(fullurl)
 
-    for i in range(10):
-        sha = r.json()[i].get('sha')
-        user_com = r.json()[i].get('commit').get('author').get('name')
+    fileno = r.json()
+    for item in fileno[:10]:
+        sha = item.get('sha')
+        user_com = item.get('commit').get('author').get('name')
         print("{}: {}".format(sha, user_com))
