@@ -3,12 +3,11 @@
     """
 import requests
 import sys
-from requests.auth import HTTPBasicAuth
 
 
 if __name__ == "__main__":
     fullurl = 'https://api.github.com/repos/' + \
-        sys.argv[1] + "/" + sys.argv[2] + "/commits"
+        sys.argv[2] + "/" + sys.argv[1] + "/commits"
     r = requests.get(fullurl)
 
     fileno = r.json()
