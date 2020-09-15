@@ -4,6 +4,6 @@ if (myVar.length === 2) {
   console.log('No argument');
 } else if (myVar.length === 3) {
   console.log('Argument found');
-} else if (myVar.length === 4) {
+} else {
   console.log('Arguments found');
 }
