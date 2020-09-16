@@ -5,4 +5,4 @@ if (arg.length > 1) {
   arg.sort();
   maxNum = arg[arg.length - 2];
 }
-console.log(maxNum);
+console.log(Number(maxNum));
